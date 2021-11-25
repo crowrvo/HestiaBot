@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "outDir": "./build",
+    "rootDir": "./src",
+    "target": "esnext",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "declaration": true,
+    "strict": false,
+    "noImplicitThis": false,
+    "skipLibCheck": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules",".vscode", ".git", ".env"]
+}

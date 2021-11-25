@@ -1,0 +1,5 @@
+function ChatModule(Message: string) {
+
+
+
+}

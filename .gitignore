@@ -1,0 +1,6 @@
+/.env
+/.vscode
+/hide-files.json
+/node_modules
+/Plano de desenvolvimento.txt
+/pnpm-lock.yaml
