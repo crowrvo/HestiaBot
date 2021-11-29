@@ -13,20 +13,11 @@
     "skipLibCheck": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "types": ["reflect-metadata"],
     "paths": {
-      "*": [
-        "./src/Types/*.d.ts"
-      ]
+      "*": ["./src/Types/*.d.ts"]
     }
   },
-  "include": [
-    "src/**/*",
-    "Tests"
-  ],
-  "exclude": [
-    "node_modules",
-    ".vscode",
-    ".git",
-    ".env"
-  ]
+  "include": ["src/**/*", "Tests"],
+  "exclude": ["node_modules", ".vscode", ".git", ".env"]
 }
