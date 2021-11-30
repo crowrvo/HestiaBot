@@ -1,5 +1,5 @@
 import { Client, ClientEvents, HexColorString } from "discord.js";
-import { EInstanceStatus, EGuilds } from "../Shared/Enums/";
+import { EInstanceStatus, EGuilds } from "../Shared/Enums";
 import type { Intents } from "discord.js";
 
 type EventPair = {

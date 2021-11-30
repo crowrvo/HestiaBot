@@ -1,10 +1,14 @@
 import { Intents } from "discord.js";
 import HestiaInstance from "./HestiaInstance";
 
-// const Ints = new Intents().add("GUILD_MESSAGES");
+const Ints = new Intents()
+  .add("GUILD_MESSAGES")
+  .add("GUILDS")
+  .add("GUILD_MEMBERS")
+  .add("GUILD_INTEGRATIONS")
 
-// let test = new HestiaInstance(Ints);
+let HestiaBot = new HestiaInstance(Ints);
 
-// test.Start(process.env.BOT_TOKEN)
+HestiaBot.Start(process.env.BOT_TOKEN)
 
-export { HestiaInstance };
+export default HestiaBot;
