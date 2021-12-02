@@ -3,11 +3,6 @@ import { CategoryChannel, GuildMember, User } from "discord.js"
 import HestiaBot from "../../Core"
 import { EGuilds } from "../../Shared/Enums"
 
-import { 
-  CategoryIdException, 
-  ChannelNameException, 
-} from "./TicketExceptions"
-
 function TicketHelpEmbed(Member: GuildMember) {
 
   return new Embed()
@@ -51,8 +46,8 @@ export default class TicketInstance {
   }
   /**
    * @param options Opções sobre a pesquisa
-   * @param options >SearchFor procurar pelo valor
-   * @param options >FindAndDelete Achar e apagar ?
+   * @param options.SearchFor procurar pelo valor
+   * @param options.FindAndDelete Achar e apagar ?
    * @returns TicketInstance
    */
   async SearchTicket(options: { FindAndDelete?: boolean, SearchFor?: string }): Promise<TicketInstance | boolean> {
@@ -112,11 +107,6 @@ export default class TicketInstance {
    */
   async CreateTicketChannel(): Promise<TicketInstance> {
 
-    if(this._MemberId.length == 0) 
-      throw ChannelNameException("Nome do canal não pode ser Nulo.")
-    if(this._CategoryId.length == 0) 
-      throw CategoryIdException("ID do CategoryChannel não pode ser Nulo.")
-
     const MangaGuild = await HestiaBot.GetClient.guilds.cache.get(EGuilds.Mangas)
 
     // @ts-ignore
@@ -175,7 +165,7 @@ export default class TicketInstance {
 
       // Fazendo o PUT dos recursos
       this._ChannelId = result.id
-      this._OpenedTickets.push({UserId: Member.id})
+      this._OpenedTickets.push({ UserId: Member.id })
 
       const time = 10 // segundos
 
@@ -198,9 +188,7 @@ export default class TicketInstance {
 
   async DeleteTicketChannel() {
 
-    if(this._ChannelId.length == 0) 
-      throw ChannelNameException("Crie o canal antes que ele seja apagado.")
-
+    
     const MangaGuild = await HestiaBot.GetClient.guilds.cache.get(EGuilds.Mangas)
 
     const result = await (await MangaGuild.channels.fetch(this._ChannelId))

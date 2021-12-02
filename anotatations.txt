@@ -1,0 +1,27 @@
+Ticket Module:
+
+  O bot procura se já tem não existe um ticket para o usuário,
+    se existir não cria o ticket e avisa que já tem um ticket pendente
+    se não existir, ele cria um novo ticket
+
+  Criar novo ticket:
+    Cria um canal cujo o nome é o id do solicitante,
+    Obs: apenas ajudantes e o solicitante conseguem ver esse canal
+    Finalizar o ticket na ausência do solicitante
+  
+  Finalizar o ticket:
+    O solicitante e a staff pode encerrar o ticket
+    ticket é deletado se houver ausência do solicitante
+
+  prepando o handler
+    #função de buscar ticket# do *usuario* -> retorna &ticket& | null
+    caso ticket not null -> rejeita o pedido, e informa
+    caso ticket null -> #Cria o ticket#
+    analise de ausencia #Deleta ticket#
+
+    #Deleta ticket# 
+
+
+    * Entidades
+    & ValueObject &
+    # Serviço -> vem de fora da nossa aplicação

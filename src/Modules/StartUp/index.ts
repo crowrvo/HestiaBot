@@ -9,16 +9,7 @@ export default class StartUp {
 
   @Event("messageCreate")
   message(...[message]: ClientEvents["messageCreate"]) {
-    console.log(message.cleanContent, message.content); //testa agr, tava com a tipagem errada
+    console.log(message.cleanContent, message.content);
   }
+
 }
-
-// AddEvent<Event extends key
-//   event: Event,
-//   callback: (...args: ClientEvents[Event]) => void
-// ) {
-//   // !this._EventsList.hasOwnProperty(event) | old, mais lento
-//   if (!this._EventsList[event]) this._EventsList[event] = [];
-//   this._EventsList[event].push(callback);
-// }
-

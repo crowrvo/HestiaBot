@@ -1,7 +1,11 @@
 import Notification from "./Notification";
 
 export default abstract class Notifiable {
-  private readonly _notifications: Array<Notification>;
+  private readonly _notifications: Array<Notification> = [];
+
+  public get GetNotifications(): Array<Notification> {
+    return this._notifications;
+  }
 
   /**
    * @param key Origem
@@ -32,6 +36,6 @@ export default abstract class Notifiable {
    * É válida ?
    */
   public isValid(): boolean {
-    return this._notifications.length > 0;
+    return this._notifications.length == 0;
   }
 }
